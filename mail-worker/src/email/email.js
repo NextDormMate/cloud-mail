@@ -13,10 +13,7 @@ import telegramService from '../service/telegram-service';
 
 export async function email(message, env, ctx) {
 
-	const config = await settingService.query({ env });
-	// 强制允许未注册邮箱（覆盖数据库值）
-	config.noRecipient = settingConst.noRecipient.OPEN;
-	// 然后从 config 中解构所需变量
+
 	try {
 
 		const {
